@@ -1,6 +1,7 @@
-import { e as createComponent, f as createAstro, h as addAttribute, i as renderHead, r as renderTemplate } from '../chunks/astro/server_DcZ_c4t4.mjs';
+import { e as createComponent, f as createAstro, h as addAttribute, j as renderHead, r as renderTemplate } from '../chunks/astro/server_xKCjqi9t.mjs';
 import 'kleur/colors';
 import 'clsx';
+/* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();

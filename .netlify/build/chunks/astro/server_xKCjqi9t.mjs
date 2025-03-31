@@ -634,5 +634,17 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   }
   return markHTMLString(output);
 }
+function defineStyleVars(defs) {
+  let output = "";
+  let arr = !Array.isArray(defs) ? [defs] : defs;
+  for (const vars of arr) {
+    for (const [key, value] of Object.entries(vars)) {
+      if (value || value === 0) {
+        output += `--${key}: ${value};`;
+      }
+    }
+  }
+  return markHTMLString(output);
+}
 
-export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createComponent as e, createAstro as f, ImageMissingAlt as g, addAttribute as h, renderHead as i, NOOP_MIDDLEWARE_HEADER as j, decodeKey as k, MissingSharp as l, maybeRenderHead as m, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };
+export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createComponent as e, createAstro as f, ImageMissingAlt as g, addAttribute as h, defineStyleVars as i, renderHead as j, NOOP_MIDDLEWARE_HEADER as k, decodeKey as l, maybeRenderHead as m, MissingSharp as n, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };

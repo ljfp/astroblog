@@ -1,8 +1,8 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "About Me";
-
 const redacted = "REDACTED";
-
 const identity = {
 	fullname: "Lautaro Javier Fernandez Pricco",
 	nickname: "Lauta",
@@ -11,13 +11,16 @@ const identity = {
 	occupation: "Software Engineer",
 	hobbies: ["board games", "coding", "cooking", "traveling","video games"],
 };
-
 const skills = ["C++", "CSS", "HTML", "JavaScript", "Linux", "Python"];
 
 // Testing conditional rendering of HTML elements.
 const happy = true;
 const finished = false;
 const goal = 5;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -27,6 +30,17 @@ const goal = 5;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{ skillColor, fontWeight, textCase }}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
 		<a href="/">Home</a>
@@ -49,7 +63,7 @@ const goal = 5;
 
 		<p>Some of my skills are:</p>
 		<ul>
-			{skills.map((skill) => (<li>{skill}</li>))}
+			{skills.map((skill) => (<li class="skill">{skill}</li>))}
 		</ul>
 		{happy && <p>I am happy to be finally making progress with my blog!</p>}
 		{finished && <p>I finished designing this blog!</p>}
