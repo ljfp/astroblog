@@ -1,6 +1,6 @@
 ---
 title: Second Blog Post
-author: LJFP
+author: Lauta
 description: "I need more than one blog post to test the layout of the website."
 image:
     url: 'https://fastly.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA'

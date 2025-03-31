@@ -1,5 +1,23 @@
 ---
+const pageTitle = "About Me";
 
+const redacted = "REDACTED";
+
+const identity = {
+	fullname: "Lautaro Javier Fernandez Pricco",
+	nickname: "Lauta",
+	pronouns: "he/him",
+	location: "Barcelona, Spain",
+	occupation: "Software Engineer",
+	hobbies: ["board games", "coding", "cooking", "traveling","video games"],
+};
+
+const skills = ["C++", "CSS", "HTML", "JavaScript", "Linux", "Python"];
+
+// Testing conditional rendering of HTML elements.
+const happy = true;
+const finished = false;
+const goal = 5;
 ---
 
 <html lang="en">
@@ -8,18 +26,33 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>LJFP</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">Home</a>
 		<a href="/about/">About</a>
 		<a href="/blog/">Blog</a>
 
-		<h1>About Me</h1>
+		<h1>{pageTitle}</h1>
 		<h2>and the blog.</h2>
 
-		<p>Placeholder for about me.</p>
+		<p>Here are some things about me:</p>
+		<ul>
+			<li>My name is: {redacted} but people call me {identity.nickname}</li>
+			<li>I live in: {identity.location} and I work as a: {identity.occupation}</li>
+			{
+				identity.hobbies.length >= 2 &&
+				<li>Some of my hobbies include: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+			}
+		</ul>
+		
 
-		<p>Placeholder for second paragraph.</p>
+		<p>Some of my skills are:</p>
+		<ul>
+			{skills.map((skill) => (<li>{skill}</li>))}
+		</ul>
+		{happy && <p>I am happy to be finally making progress with my blog!</p>}
+		{finished && <p>I finished designing this blog!</p>}
+		{goal === 5 ? <p>My goal is to finish in 5 days.</p> : <p>I don't actually have a deadline.</p>}
 	</body>
 </html>

@@ -2,7 +2,7 @@
 title: 'Initial post'
 pubDate: 2025-03-31
 description: 'This is the first post of my blog. I will be using it to test styles and layouts.'
-author: 'LJFP'
+author: 'Lauta'
 image:
     url: 'https://fastly.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA'
     alt: "A MacBook Air on a table. On its right, there's a coffee and an Iphone. On its left, there's a notebook and a pen."
