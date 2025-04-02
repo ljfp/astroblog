@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Third time's a charm
 author: Lauta
 description: "I need more than ~one~ two blog posts to test the layout of the website."

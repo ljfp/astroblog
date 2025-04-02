@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Second Blog Post
 author: Lauta
 description: "I need more than one blog post to test the layout of the website."

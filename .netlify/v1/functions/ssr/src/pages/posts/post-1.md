@@ -1,17 +1,14 @@
 ---
-title: 'Initial post'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: Initial post
 pubDate: 2025-03-31
-description: 'This is the first post of my blog. I will be using it to test styles and layouts.'
-author: 'Lauta'
+description: This is the first post of my blog. I will be using it to test styles and layouts.
+author: Lauta
 image:
     url: 'https://fastly.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA'
     alt: "A MacBook Air on a table. On its right, there's a coffee and an Iphone. On its left, there's a notebook and a pen."
 tags: ["astro", "blogging", "digital nomad"]
 ---
-# Initial post
-
-Published on: 2025-03-31
-
 Welcome to my _personal_ blog. Here, I will share my thoughts, projects, and things I find interesting. It will be (mostly) written in english and I will (mostly) talk about things in tech.
 
 ## Stack

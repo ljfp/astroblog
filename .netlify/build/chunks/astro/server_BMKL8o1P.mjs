@@ -943,6 +943,9 @@ function isSlotString(str) {
   return !!str[slotString];
 }
 function renderSlot(result, slotted, fallback) {
+  if (!slotted && fallback) {
+    return renderSlot(result, fallback);
+  }
   return {
     async render(destination) {
       await renderChild(destination, typeof slotted === "function" ? slotted(result) : slotted);
@@ -971,7 +974,7 @@ async function renderSlotToString(result, slotted, fallback) {
       }
     }
   };
-  const renderInstance = renderSlot(result, slotted);
+  const renderInstance = renderSlot(result, slotted, fallback);
   await renderInstance.render(temporaryDestination);
   return markHTMLString(new SlotString(content, instructions));
 }
@@ -1809,4 +1812,4 @@ function defineStyleVars(defs) {
   return markHTMLString(output);
 }
 
-export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createComponent as e, createAstro as f, ImageMissingAlt as g, addAttribute as h, defineStyleVars as i, renderHead as j, renderComponent as k, renderScript as l, maybeRenderHead as m, NOOP_MIDDLEWARE_HEADER as n, decodeKey as o, MissingSharp as p, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };
+export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createComponent as e, createAstro as f, ImageMissingAlt as g, addAttribute as h, defineStyleVars as i, renderComponent as j, renderSlot as k, renderHead as l, maybeRenderHead as m, renderScript as n, NOOP_MIDDLEWARE_HEADER as o, decodeKey as p, MissingSharp as q, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };
