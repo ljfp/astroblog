@@ -1,17 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import BlogPost from "../../components/BlogPost.astro";
 export async function getStaticPaths() {
 	const allPosts = Object.values(
 		import.meta.glob("../posts/*.md", { eager: true }),
 	);
-	return [
-		{ params: { tag: "astro" }, props: { posts: allPosts } },
-		{ params: { tag: "blogging" }, props: { posts: allPosts } },
-		{ params: { tag: "digital nomad" }, props: { posts: allPosts } },
-		{ params: { tag: "series" }, props: { posts: allPosts } },
-		{ params: { tag: "lorem ipsum" }, props: { posts: allPosts } },
-	];
+
+	const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+	return uniqueTags.map((tag) => {
+		const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
 }
 
 // Also addressing the warning about prerendering
@@ -29,12 +32,6 @@ const filteredPosts = posts.filter((post: any) =>
 <BaseLayout pageTitle={tag}>
 	<p>Posts tagged with {tag}</p>
 	<ul>
-		{
-			filteredPosts.map((post: any) => (
-				<li>
-					<a href={post.url}>{post.frontmatter.title}</a>
-				</li>
-			))
-		}
+		{posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
 	</ul>
 </BaseLayout>
