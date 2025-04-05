@@ -1,6 +1,6 @@
 import { e as createComponent, j as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_DnmiPxOS.mjs';
+import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_CjRcwX4E.mjs';
 
 const html = () => "<p>This post should show up with my other blog posts, because <code>import.meta.glob()</code> is returning a list of all my posts in order to create my list.</p>";
 
@@ -36,7 +36,7 @@ const html = () => "<p>This post should show up with my other blog posts, becaus
 							})}`;
 				});
 
-const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const __vite_glob_0_3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	Content,
 	compiledContent,
@@ -48,4 +48,4 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { _page as _ };
+export { __vite_glob_0_3 as _ };

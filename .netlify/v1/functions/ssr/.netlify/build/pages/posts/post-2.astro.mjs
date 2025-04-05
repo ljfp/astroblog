@@ -1,6 +1,6 @@
-import { _ as _page } from '../../chunks/post-2_B1EX8Fhn.mjs';
+import { _ as __vite_glob_0_1 } from '../../chunks/post-2_DeLIb8mL.mjs';
 export { renderers } from '../../renderers.mjs';
 
-const page = () => _page;
+const page = () => __vite_glob_0_1;
 
 export { page };

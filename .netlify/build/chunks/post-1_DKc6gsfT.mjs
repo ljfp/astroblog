@@ -1,6 +1,6 @@
 import { e as createComponent, j as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_DnmiPxOS.mjs';
+import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_CjRcwX4E.mjs';
 
 const html = () => "<p>Welcome to my <em>personal</em> blog. Here, I will share my thoughts, projects, and things I find interesting. It will be (mostly) written in english and I will (mostly) talk about things in tech.</p>\n<h2 id=\"stack\">Stack</h2>\n<ol>\n<li>\n<p><strong>Astro</strong>: This is a Javascript framework to create content-driven websites. Component rendering is done server-side. This may look like a bad idea for a website hosted on a Raspberry Pi, but since I’m not hosting a lot of things in it and the blog will consist of static content, the specs of the Raspberry Pi are more than enough.</p>\n</li>\n<li>\n<p><strong>Apache HTTP Server</strong>: Realiable, simple, and I already know how to use it. Nginx also checks those boxes, but I find it easier to set up virtual hosts on Apache HTTP than on Nginx.</p>\n</li>\n<li>\n<p><strong>Raspberry Pi 4 model B</strong>: I bought this one two years ago, when I was living in Buenos Aires. Since it’s small enough I decided to take it with me when I started travelling.</p>\n</li>\n</ol>\n<h2 id=\"whats-next\">What’s next</h2>\n<p>I will decide on a layout, then test some styles. Once I settle with the layout and style of the website, I’ll start adding new posts.</p>";
 
@@ -36,7 +36,7 @@ const html = () => "<p>Welcome to my <em>personal</em> blog. Here, I will share 
 							})}`;
 				});
 
-const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const __vite_glob_0_0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	Content,
 	compiledContent,
@@ -48,4 +48,4 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { _page as _ };
+export { __vite_glob_0_0 as _ };

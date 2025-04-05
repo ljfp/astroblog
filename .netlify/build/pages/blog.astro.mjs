@@ -1,10 +1,10 @@
-import { _ as _page$1 } from '../chunks/post-1_B38ouMG4.mjs';
-import { _ as _page$2 } from '../chunks/post-2_B1EX8Fhn.mjs';
-import { _ as _page$3 } from '../chunks/post-3_DKCvUOG0.mjs';
-import { _ as _page$4 } from '../chunks/post-4_B67V83Vq.mjs';
+import { _ as __vite_glob_0_0 } from '../chunks/post-1_DKc6gsfT.mjs';
+import { _ as __vite_glob_0_1 } from '../chunks/post-2_DeLIb8mL.mjs';
+import { _ as __vite_glob_0_2 } from '../chunks/post-3_B1gKoBLU.mjs';
+import { _ as __vite_glob_0_3 } from '../chunks/post-4_BL4UQBtx.mjs';
 import { e as createComponent, f as createAstro, m as maybeRenderHead, h as addAttribute, r as renderTemplate, j as renderComponent } from '../chunks/astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout } from '../chunks/BaseLayout_CHxQZ16-.mjs';
+import { $ as $$BaseLayout } from '../chunks/BaseLayout_CTuRtKcb.mjs';
 import 'clsx';
 export { renderers } from '../renderers.mjs';
 
@@ -12,14 +12,12 @@ const $$Astro = createAstro();
 const $$BlogPost = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$BlogPost;
-  const { url, title } = Astro2.props;
+  const { title, url } = Astro2.props;
   return renderTemplate`${maybeRenderHead()}<li><a${addAttribute(url, "href")}>${title}</a></li>`;
 }, "/home/ljfp/Repositories/astroblog/src/components/BlogPost.astro", void 0);
 
 const $$Blog = createComponent(($$result, $$props, $$slots) => {
-  const allPosts = Object.values(
-    [_page$1,_page$2,_page$3,_page$4]
-  );
+  const allPosts = Object.values([__vite_glob_0_0,__vite_glob_0_1,__vite_glob_0_2,__vite_glob_0_3]);
   const pageTitle = "Blog";
   return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "pageTitle": pageTitle }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<p>This is where the first post will go.</p> <ul> ${allPosts.map((post) => renderTemplate`${renderComponent($$result2, "BlogPost", $$BlogPost, { "url": post.url, "title": post.frontmatter.title })}`)} </ul> ` })}`;
 }, "/home/ljfp/Repositories/astroblog/src/pages/blog.astro", void 0);

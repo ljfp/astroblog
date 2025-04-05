@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+	const allPosts = Object.values(
+		import.meta.glob("../posts/*.md", { eager: true }),
+	);
+	return [
+		{ params: { tag: "astro" }, props: { posts: allPosts } },
+		{ params: { tag: "blogging" }, props: { posts: allPosts } },
+		{ params: { tag: "digital nomad" }, props: { posts: allPosts } },
+		{ params: { tag: "series" }, props: { posts: allPosts } },
+		{ params: { tag: "lorem ipsum" }, props: { posts: allPosts } },
+	];
+}
+
+// Also addressing the warning about prerendering
+export const prerender = true;
+
+const { tag } = Astro.params;
+console.log(tag);
+const { posts } = Astro.props;
+console.log(posts);
+const filteredPosts = posts.filter((post: any) =>
+	post.frontmatter.tags?.includes(tag),
+);
+---
+
+<BaseLayout pageTitle={tag}>
+	<p>Posts tagged with {tag}</p>
+	<ul>
+		{
+			filteredPosts.map((post: any) => (
+				<li>
+					<a href={post.url}>{post.frontmatter.title}</a>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>
