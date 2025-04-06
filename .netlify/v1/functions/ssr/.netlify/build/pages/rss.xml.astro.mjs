@@ -6,7 +6,7 @@ async function GET(context) {
     title: 'Astro Learner | Blog',
     description: 'My journey learning Astro',
     site: context.site,
-    items: await pagesGlobToRssItems(/* #__PURE__ */ Object.assign({"./posts/post-1.md": () => import('../chunks/post-1_BMIDN3yE.mjs').then(n => n._),"./posts/post-2.md": () => import('../chunks/post-2_scHx-7AZ.mjs').then(n => n._),"./posts/post-3.md": () => import('../chunks/post-3_DxgMwYX3.mjs').then(n => n._),"./posts/post-4.md": () => import('../chunks/post-4_DWdWXVlE.mjs').then(n => n._)})),
+    items: await pagesGlobToRssItems(/* #__PURE__ */ Object.assign({"./posts/post-1.md": () => import('../chunks/post-1_BZfjGeZv.mjs').then(n => n._),"./posts/post-2.md": () => import('../chunks/post-2_CDbAgcNU.mjs').then(n => n._),"./posts/post-3.md": () => import('../chunks/post-3_pC-EADT-.mjs').then(n => n._),"./posts/post-4.md": () => import('../chunks/post-4_BDwrSZLa.mjs').then(n => n._)})),
     customData: `<language>en-us</language>`
   });
 }

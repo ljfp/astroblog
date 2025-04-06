@@ -1,6 +1,6 @@
 import { e as createAstro, f as createComponent, j as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, o as renderSlot } from './astro/server_q8ZOQVc3.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout } from './BaseLayout_DvNUqEW6.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_Dn5dqeZP.mjs';
 /* empty css                          */
 
 const $$Astro = createAstro("https://ljfp.netlify.app");
