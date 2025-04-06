@@ -1,17 +1,14 @@
-import { _ as __vite_glob_0_0 } from '../chunks/post-1_BZfjGeZv.mjs';
-import { _ as __vite_glob_0_1 } from '../chunks/post-2_CDbAgcNU.mjs';
-import { _ as __vite_glob_0_2 } from '../chunks/post-3_pC-EADT-.mjs';
-import { _ as __vite_glob_0_3 } from '../chunks/post-4_BDwrSZLa.mjs';
-import { f as createComponent, j as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_q8ZOQVc3.mjs';
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server__5-nRXt4.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout } from '../chunks/BaseLayout_Dn5dqeZP.mjs';
-import { $ as $$BlogPost } from '../chunks/BlogPost__l2stSXy.mjs';
+import { g as getCollection } from '../chunks/_astro_content_XIwoEkDa.mjs';
+import { $ as $$BaseLayout } from '../chunks/BaseLayout_CG-cMFWU.mjs';
+import { $ as $$BlogPost } from '../chunks/BlogPost_BlmSKuY5.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Blog = createComponent(($$result, $$props, $$slots) => {
-  const allPosts = Object.values([__vite_glob_0_0,__vite_glob_0_1,__vite_glob_0_2,__vite_glob_0_3]);
+const $$Blog = createComponent(async ($$result, $$props, $$slots) => {
   const pageTitle = "Blog";
-  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "pageTitle": pageTitle }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<p>This is where the first post will go.</p> <ul> ${allPosts.map((post) => renderTemplate`${renderComponent($$result2, "BlogPost", $$BlogPost, { "url": post.url, "title": post.frontmatter.title })}`)} </ul> ` })}`;
+  const allPosts = await getCollection("blog");
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "pageTitle": pageTitle }, { "default": async ($$result2) => renderTemplate` ${maybeRenderHead()}<p>This is where the first post will go.</p> <ul> ${allPosts.map((post) => renderTemplate`${renderComponent($$result2, "BlogPost", $$BlogPost, { "url": `/posts/${post.id}/`, "title": post.data.title })}`)} </ul> ` })}`;
 }, "/home/ljfp/Repositories/astroblog/src/pages/blog.astro", void 0);
 
 const $$file = "/home/ljfp/Repositories/astroblog/src/pages/blog.astro";

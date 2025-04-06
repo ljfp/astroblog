@@ -1,6 +1,6 @@
-import { f as createComponent, j as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_q8ZOQVc3.mjs';
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server__5-nRXt4.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout } from '../chunks/BaseLayout_Dn5dqeZP.mjs';
+import { $ as $$BaseLayout } from '../chunks/BaseLayout_CG-cMFWU.mjs';
 import { useState } from 'preact/hooks';
 import { jsxs, jsx } from 'preact/jsx-runtime';
 export { renderers } from '../renderers.mjs';
