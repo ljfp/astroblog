@@ -1,9 +1,9 @@
-import { e as createComponent, f as createAstro, m as maybeRenderHead, h as addAttribute, r as renderTemplate, j as renderComponent, l as renderHead, k as renderSlot, n as renderScript } from './astro/server_BMKL8o1P.mjs';
+import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, r as renderTemplate, j as renderComponent, p as renderHead, o as renderSlot, q as renderScript } from './astro/server_q8ZOQVc3.mjs';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                          */
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://ljfp.netlify.app");
 const $$Social = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Social;
@@ -27,7 +27,7 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<header> <nav> ${renderComponent($$result, "Hamburger", $$Hamburger, {})} ${renderComponent($$result, "Navigation", $$Navigation, {})} </nav> </header>`;
 }, "/home/ljfp/Repositories/astroblog/src/components/Header.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://ljfp.netlify.app");
 const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$BaseLayout;

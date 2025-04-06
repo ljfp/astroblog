@@ -1,9 +1,9 @@
-import { e as createComponent, f as createAstro, j as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, k as renderSlot } from './astro/server_BMKL8o1P.mjs';
+import { e as createAstro, f as createComponent, j as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, o as renderSlot } from './astro/server_q8ZOQVc3.mjs';
 import 'kleur/colors';
-import { $ as $$BaseLayout } from './BaseLayout_DOSxJEkB.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_DvNUqEW6.mjs';
 /* empty css                          */
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://ljfp.netlify.app");
 const $$MarkdownPostLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$MarkdownPostLayout;

@@ -262,7 +262,7 @@ function createAstro(site) {
   return {
     // TODO: this is no longer necessary for `Astro.site`
     // but it somehow allows working around caching issues in content collections for some tests
-    site: void 0,
+    site: new URL(site) ,
     generator: `Astro v${ASTRO_VERSION}`,
     glob: createAstroGlobFn()
   };
@@ -1812,4 +1812,4 @@ function defineStyleVars(defs) {
   return markHTMLString(output);
 }
 
-export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createComponent as e, createAstro as f, ImageMissingAlt as g, addAttribute as h, defineStyleVars as i, renderComponent as j, renderSlot as k, renderHead as l, maybeRenderHead as m, renderScript as n, NOOP_MIDDLEWARE_HEADER as o, decodeKey as p, MissingSharp as q, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };
+export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, NoImageMetadata as N, UnsupportedImageFormat as U, UnsupportedImageConversion as a, ExpectedImageOptions as b, ExpectedNotESMImage as c, InvalidImageService as d, createAstro as e, createComponent as f, ImageMissingAlt as g, addAttribute as h, defineStyleVars as i, renderComponent as j, NOOP_MIDDLEWARE_HEADER as k, decodeKey as l, maybeRenderHead as m, MissingSharp as n, renderSlot as o, renderHead as p, renderScript as q, renderTemplate as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u };
