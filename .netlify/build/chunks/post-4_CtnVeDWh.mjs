@@ -1,6 +1,6 @@
 import { e as createComponent, j as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_CjRcwX4E.mjs';
+import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_MUnksQ5m.mjs';
 
 const html = () => "<p>This post should show up with my other blog posts, because <code>import.meta.glob()</code> is returning a list of all my posts in order to create my list.</p>";
 

@@ -1,6 +1,6 @@
 import { e as createComponent, j as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_CjRcwX4E.mjs';
+import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_MUnksQ5m.mjs';
 
 const html = () => "<p>I’m forcing myself to write more so there will be no Lorem Ipsums here. Deal with it.</p>";
 

@@ -1,6 +1,6 @@
 import { e as createComponent, j as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_BMKL8o1P.mjs';
 import 'kleur/colors';
-import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_CjRcwX4E.mjs';
+import { $ as $$MarkdownPostLayout } from './MarkdownPostLayout_MUnksQ5m.mjs';
 
 const html = () => "<p>I think that three posts are enough for testing purposes. Let’s stop here with the Markdown files and start doing some HTML and CSS! (said no one ever).</p>";
 

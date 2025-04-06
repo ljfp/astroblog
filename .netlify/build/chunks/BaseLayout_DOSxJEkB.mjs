@@ -20,7 +20,7 @@ const $$Hamburger = createComponent(($$result, $$props, $$slots) => {
 }, "/home/ljfp/Repositories/astroblog/src/components/Hamburger.astro", void 0);
 
 const $$Navigation = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<div class="nav-links"> <a href="/">Home</a> <a href="/about/">About</a> <a href="/blog/">Blog</a> </div>`;
+  return renderTemplate`${maybeRenderHead()}<div class="nav-links"> <a href="/">Home</a> <a href="/about/">About</a> <a href="/blog/">Blog</a> <a href="/tags/">Tags</a> </div>`;
 }, "/home/ljfp/Repositories/astroblog/src/components/Navigation.astro", void 0);
 
 const $$Header = createComponent(($$result, $$props, $$slots) => {
