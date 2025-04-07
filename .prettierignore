@@ -1,0 +1,6 @@
+# Ignore build output
+dist/
+# Ignore Netlify generated files
+.netlify/
+# Node modules
+node_modules/ 

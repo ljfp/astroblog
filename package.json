@@ -1,20 +1,31 @@
 {
-  "name": "astroblog",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.2.4",
-    "@astrojs/preact": "^4.0.8",
-    "@astrojs/rss": "^4.0.11",
-    "astro": "^5.5.5",
-    "preact": "^10.26.5",
-    "typescript": "^5.8.2"
-  }
+	"name": "astroblog",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"pretty": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
+		"lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+		"format": "npm run pretty && npm run lint"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/netlify": "^6.2.4",
+		"@astrojs/preact": "^4.0.8",
+		"@astrojs/rss": "^4.0.11",
+		"astro": "^5.5.5",
+		"preact": "^10.26.5",
+		"typescript": "^5.8.2"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "^8.29.1",
+		"eslint": "^9.24.0",
+		"eslint-formatter-table": "^7.32.1",
+		"eslint-plugin-astro": "^1.3.1",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"prettier-plugin-astro": "^0.14.1"
+	}
 }

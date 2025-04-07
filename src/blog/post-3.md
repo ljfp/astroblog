@@ -8,4 +8,5 @@ image:
     alt: "A MacBook Air on a table. On its right, there's a coffee and an Iphone. On its left, there's a notebook and a pen."
 tags: ["astro", "blogging", "digital nomad", "series"]
 ---
+
 I think that three posts are enough for testing purposes. Let's stop here with the Markdown files and start doing some HTML and CSS! (said no one ever).
