@@ -1,33 +1,28 @@
-# Astro Starter Kit: Minimal
+# Personal Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is my personal website built with [Astro](https://astro.build), featuring my blog posts, information about me, and showcasing my open-source projects.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 📚 Site Sections
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Blog** - Technology posts and personal opinions
+- **About Me** - Introduction to who I am
+- **Projects** - Showcase of my open-source work
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── public/                | Static assets, like images, should go here.
+├── src/                   | 
+│   ├── blog/              | A collection of blog posts, in Markdown format, as defined in content.config.ts
+│   ├── components/        | Astro and Preact components go here.
+│   ├── layouts/           | HTML layout for different sections of the website. Also composed with Astro.
+│   ├── pages/             | Astro  looks for `.astro` or `.md` files here. Each page is exposed as a route based on its file name.
+│   ├── scripts/           | Small, plain JS scripts should go here. 
+│   ├── styles/            | If the style is associated with a UI component, it should go with the component. Otherwise, put it here.
+│   └── content.config.ts  | Here I define schemas for the collections. So far there's only one collection: Blogs.
+└── package.json           | Dependencies, devDependencies, Scripts (for NPM), and versioning.
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -37,11 +32,14 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run build`           | Build the production site to `./dist/`           |
+| `npm run preview`         | Preview the build locally, before deploying      |
+| `npm run pretty`          | Format code with Prettier                        |
+| `npm run lint`            | Lint code with ESLint                            |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🛠️ Technologies
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://astro.build) - Web framework
+- [Preact](https://preactjs.com) - UI components
+- [Netlify](https://netlify.com) - Deployment platform

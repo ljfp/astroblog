@@ -20,7 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# IDEs settings folder
+# IDEs settings
 .idea/
 .cursor/
 .vscode/
+*.code-workspace

@@ -8,9 +8,8 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"pretty": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
-		"lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
-		"format": "npm run pretty && npm run lint"
-	},
+		"lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
+		},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
 		"@astrojs/netlify": "^6.2.4",
