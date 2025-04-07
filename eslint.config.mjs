@@ -2,7 +2,7 @@
 import eslintPluginAstro from 'eslint-plugin-astro';
 import typescriptParser from '@typescript-eslint/parser';
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
+/** @type {import("eslint").Linter.Config[]} */
 export default [
 	// Base configurations
 	...eslintPluginAstro.configs.recommended,
@@ -13,6 +13,30 @@ export default [
 		files: ["**/*.ts", "**/*.tsx"],
 		languageOptions: {
 			parser: typescriptParser
+		}
+	},
+
+	// Preact/JSX configuration
+	{
+		files: ["**/*.jsx"],
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				},
+				jsxPragma: "h", // For Preact
+				ecmaVersion: "latest",
+				sourceType: "module"
+			}
+		},
+		settings: {
+			jsx: {
+				pragma: "h" // For Preact
+			},
+			react: {
+				pragma: "h", // Use Preact's h() function instead of React's createElement
+				version: "detect"
+			}
 		}
 	},
 
@@ -27,8 +51,9 @@ export default [
 
 	// Add custom rules if needed
 	{
+		files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx", "**/*.astro"],
 		rules: {
-			// Add any custom rules here
+			"no-console": "warn" // Add a rule to flag console.log statements
 		}
 	}
 ]; 
