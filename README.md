@@ -13,12 +13,12 @@ This is my personal website built with [Astro](https://astro.build), featuring m
 ```text
 /
 ├── public/                | Static assets, like images, should go here.
-├── src/                   | 
+├── src/                   |
 │   ├── blog/              | A collection of blog posts, in Markdown format, as defined in content.config.ts
 │   ├── components/        | Astro and Preact components go here.
 │   ├── layouts/           | HTML layout for different sections of the website. Also composed with Astro.
 │   ├── pages/             | Astro  looks for `.astro` or `.md` files here. Each page is exposed as a route based on its file name.
-│   ├── scripts/           | Small, plain JS scripts should go here. 
+│   ├── scripts/           | Small, plain JS scripts should go here.
 │   ├── styles/            | If the style is associated with a UI component, it should go with the component. Otherwise, put it here.
 │   └── content.config.ts  | Here I define schemas for the collections. So far there's only one collection: Blogs.
 └── package.json           | Dependencies, devDependencies, Scripts (for NPM), and versioning.
@@ -28,15 +28,15 @@ This is my personal website built with [Astro](https://astro.build), featuring m
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build the production site to `./dist/`           |
-| `npm run preview`         | Preview the build locally, before deploying      |
-| `npm run pretty`          | Format code with Prettier                        |
-| `npm run lint`            | Lint code with ESLint                            |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm install`       | Installs dependencies                            |
+| `npm run dev`       | Starts local dev server at `localhost:4321`      |
+| `npm run build`     | Build the production site to `./dist/`           |
+| `npm run preview`   | Preview the build locally, before deploying      |
+| `npm run pretty`    | Format code with Prettier                        |
+| `npm run lint`      | Lint code with ESLint                            |
+| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
 
 ## 🛠️ Technologies
 
