@@ -1832,17 +1832,5 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   }
   return markHTMLString(output);
 }
-function defineStyleVars(defs) {
-  let output = "";
-  let arr = !Array.isArray(defs) ? [defs] : defs;
-  for (const vars of arr) {
-    for (const [key, value] of Object.entries(vars)) {
-      if (value || value === 0) {
-        output += `--${key}: ${value};`;
-      }
-    }
-  }
-  return markHTMLString(output);
-}
 
-export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingSharp as M, NOOP_MIDDLEWARE_HEADER as N, RenderUndefinedEntryError as R, UnknownContentCollectionError as U, renderTemplate as a, addAttribute as b, createComponent as c, defineStyleVars as d, createAstro as e, renderSlot as f, renderUniqueStylesheet as g, renderScriptElement as h, createHeadAndContent as i, renderHead as j, renderScript as k, decodeKey as l, maybeRenderHead as m, MissingImageDimension as n, UnsupportedImageFormat as o, UnsupportedImageConversion as p, NoImageMetadata as q, renderComponent as r, ExpectedImageOptions as s, toStyleString as t, unescapeHTML as u, ExpectedNotESMImage as v, InvalidImageService as w, ImageMissingAlt as x, spreadAttributes as y };
+export { AstroError as A, ExpectedImage as E, FailedToFetchRemoteImageDimensions as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingSharp as M, NOOP_MIDDLEWARE_HEADER as N, RenderUndefinedEntryError as R, UnknownContentCollectionError as U, renderTemplate as a, createAstro as b, createComponent as c, addAttribute as d, renderSlot as e, renderUniqueStylesheet as f, renderScriptElement as g, createHeadAndContent as h, renderHead as i, renderScript as j, decodeKey as k, MissingImageDimension as l, maybeRenderHead as m, UnsupportedImageFormat as n, UnsupportedImageConversion as o, NoImageMetadata as p, ExpectedImageOptions as q, renderComponent as r, ExpectedNotESMImage as s, toStyleString as t, unescapeHTML as u, InvalidImageService as v, ImageMissingAlt as w, spreadAttributes as x };

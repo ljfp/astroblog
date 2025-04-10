@@ -3,4 +3,7 @@ dist/
 # Ignore Netlify generated files
 .netlify/
 # Node modules
-node_modules/ 
+node_modules/
+# Ignore SRCL submodule
+srcl/
+**/srcl/** 

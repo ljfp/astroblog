@@ -1,13 +1,30 @@
 ---
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header>
 	<nav>
-		<Hamburger />
-		<ThemeIcon />
+		<div class="nav-left">
+			<Hamburger />
+		</div>
 		<Navigation />
 	</nav>
 </header>
+
+<style>
+	header {
+		margin-bottom: 2rem;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.nav-left {
+		display: flex;
+		align-items: center;
+	}
+</style>

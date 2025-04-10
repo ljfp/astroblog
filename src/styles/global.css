@@ -1,15 +1,15 @@
 html {
-	background-color: #f1f5f9;
-	font-family: sans-serif;
+	background-color: var(--theme-background);
+	font-family: var(--font-family-mono);
 }
 
 html.dark {
-	background-color: #0d0950;
-	color: #fff;
+	background-color: var(--theme-background);
+	color: var(--theme-text);
 }
 
-	.dark .nav-links a {
-		color: #fff;
+.dark .nav-links a {
+	color: var(--theme-text);
 }
 
 body {
@@ -18,6 +18,7 @@ body {
 	max-width: 80ch;
 	padding: 1rem;
 	line-height: 1.5;
+	color: var(--theme-text);
 }
 
 * {
@@ -29,8 +30,99 @@ h1 {
 	font-size: 2.5rem;
 }
 
-/* nav styles */
+/* Theme Variables */
+:root {
+	/* Base Colors */
+	--color-black-100: rgba(0, 0, 0, 1);
+	--color-black-100-4: rgba(0, 0, 0, 0.4);
+	--color-gray-10: rgba(244, 244, 244, 1);
+	--color-gray-20: rgba(224, 224, 224, 1);
+	--color-gray-30: rgba(198, 198, 198, 1);
+	--color-gray-40: rgba(168, 168, 168, 1);
+	--color-gray-40-2: rgba(168, 168, 168, 0.2);
+	--color-gray-60: rgba(111, 111, 111, 1);
+	--color-gray-70: rgba(82, 82, 82, 1);
+	--color-gray-70-3: rgba(82, 82, 82, 0.3);
+	--color-gray-80: rgba(57, 57, 57, 1);
+	--color-gray-90: rgba(38, 38, 38, 1);
+	--color-white: rgba(255, 255, 255, 1);
+	--color-daybreak-10: rgba(239, 99, 0, 1);
+	--color-daybreak-10-5: rgba(239, 99, 0, 0.5);
 
+	/* Font Configuration */
+	--font-family-mono: monospace, monospace;
+}
+
+/* Light Theme - Refined White */
+:root,
+html,
+html.light {
+	--theme-overlay: var(--color-black-100-4, rgba(0, 0, 0, 0.4));
+	--theme-background: var(--color-white, #ffffff);
+	--theme-background-modal: var(--color-gray-20, #e0e0e0);
+	--theme-background-modal-footer: var(--color-gray-40, #a8a8a8);
+	--theme-background-input: var(--color-gray-10, #f4f4f4);
+	--theme-border: var(--color-gray-20, #e0e0e0);
+	--theme-border-subdued: var(--color-gray-40-2, rgba(168, 168, 168, 0.2));
+	--theme-text: var(--color-black-100, #000000);
+	--theme-button: var(--color-black-100, #000000);
+	--theme-button-text: var(--color-white, #ffffff);
+	--theme-button-foreground: var(--color-gray-30, #c6c6c6);
+	--theme-button-background: var(--color-gray-20, #e0e0e0);
+	--theme-focused-foreground: var(--color-gray-40, #a8a8a8);
+	background-color: var(--theme-background);
+	color: var(--theme-text);
+}
+
+/* Dark Theme - Black Midnight Vapor */
+html.dark {
+	--theme-overlay: var(--color-black-100-4, rgba(0, 0, 0, 0.4));
+	--theme-background: var(--color-black-100, #000000);
+	--theme-background-modal: var(--color-gray-80, #393939);
+	--theme-background-modal-footer: var(--color-gray-70, #525252);
+	--theme-background-input: var(--color-gray-60, #6f6f6f);
+	--theme-border: var(--color-gray-80, #393939);
+	--theme-border-subdued: var(--color-gray-70-3, rgba(82, 82, 82, 0.3));
+	--theme-text: var(--color-white, #ffffff);
+	--theme-button: var(--color-white, #ffffff);
+	--theme-button-text: var(--color-black-100, #000000);
+	--theme-button-foreground: var(--color-gray-90, #262626);
+	--theme-button-background: var(--color-gray-80, #393939);
+	--theme-focused-foreground: var(--color-daybreak-10, #ef6300);
+	--theme-focused-foreground-subdued: var(--color-daybreak-10-5, rgba(239, 99, 0, 0.5));
+	background-color: var(--theme-background);
+	color: var(--theme-text);
+}
+
+/* Apply font family to all elements when using a custom font */
+html body,
+html body * {
+	font-family: var(--font-family-mono);
+}
+
+/* Global link styling */
+a {
+	color: var(--theme-text);
+	text-decoration: none;
+	border-bottom: 1px solid var(--theme-border);
+}
+
+a:hover,
+a:focus {
+	background-color: var(--theme-focused-foreground-subdued, rgba(168, 168, 168, 0.2));
+	border-bottom-color: var(--theme-text);
+}
+
+/* Button-style links should not have the bottom border */
+a.button-link,
+.nav-links a,
+.projects-preview a,
+.social-link,
+.tag a {
+	border-bottom: none;
+}
+
+/* nav styles */
 .hamburger {
 	padding-right: 20px;
 	cursor: pointer;
@@ -38,34 +130,35 @@ h1 {
 
 .hamburger .line {
 	display: block;
-	width: 40px;
-	height: 5px;
-	margin-bottom: 10px;
-	background-color: #ff9776;
+	width: 20px;
+	height: 2px;
+	margin-bottom: 6px;
+	background-color: var(--theme-text);
 }
 
 .nav-links {
 	width: 100%;
 	top: 5rem;
 	left: 48px;
-	background-color: #ff9776;
+	background-color: var(--theme-background-modal);
 	display: none;
 	margin: 0;
+	border: 1px solid var(--theme-border);
 }
 
 .nav-links a {
 	display: block;
-	text-align: center;
-	padding: 10px 0;
+	text-align: left;
+	padding: 8px 16px;
 	text-decoration: none;
-	font-size: 1.2rem;
-	font-weight: bold;
-	text-transform: uppercase;
+	font-size: 0.9rem;
+	color: var(--theme-text);
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-	background-color: #ff9776;
+	background-color: var(--theme-focused-foreground);
+	color: var(--theme-text);
 }
 
 .expanded {
@@ -74,20 +167,37 @@ h1 {
 
 @media screen and (min-width: 636px) {
 	.nav-links {
-		margin-left: 5em;
-		display: block;
+		margin-left: 1em;
+		display: flex;
+		justify-content: flex-end;
+		gap: 1rem;
 		position: static;
 		width: auto;
 		background: none;
+		border: none;
 	}
 
 	.nav-links a {
 		display: inline-block;
-		padding: 15px 20px;
+		padding: 6px 8px;
+		font-size: 0.9rem;
+		border: 1px solid var(--theme-border);
+	}
+
+	.nav-links a:hover,
+	.nav-links a:focus {
+		border-color: var(--theme-focused-foreground);
 	}
 
 	.hamburger {
 		display: none;
 	}
+}
 
+/* For larger screens, optimize the layout even further */
+@media screen and (min-width: 900px) {
+	.nav-links a {
+		padding: 6px 10px;
+		font-size: 0.9rem;
+	}
 }

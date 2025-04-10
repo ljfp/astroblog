@@ -17,18 +17,30 @@ const skills = ["C++", "CSS", "HTML", "JavaScript", "Linux", "Python"];
 const happy = true;
 const finished = true;
 const goal = 5;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<style define:vars={{ skillColor, fontWeight, textCase }}>
+	<style>
 		.skill {
-			color: var(--skillColor);
-			font-weight: var(--fontWeight);
-			text-transform: var(--textCase);
+			color: var(--theme-text);
+			border: 1px solid var(--theme-border);
+			padding: 0.3rem 0.6rem;
+			margin-right: 0.5rem;
+			display: inline-block;
+			font-size: 0.9rem;
+			background-color: var(--theme-background-modal);
+		}
+
+		.skill:hover {
+			border-color: var(--theme-focused-foreground);
+		}
+
+		ul.skills-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			list-style: none;
+			padding: 0;
 		}
 	</style>
 
@@ -50,7 +62,7 @@ const textCase = "uppercase";
 	</ul>
 
 	<p>Some of my skills are:</p>
-	<ul>
+	<ul class="skills-list">
 		{skills.map((skill) => <li class="skill">{skill}</li>)}
 	</ul>
 	{happy && <p>I am happy to be finally making progress with my blog!</p>}

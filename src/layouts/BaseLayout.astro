@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import ControlBar from "../components/TerminalBar";
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
@@ -13,20 +14,81 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+
+		<!-- Terminal fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Roboto+Mono:wght@400;500&family=Source+Code+Pro:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+
 		<style>
 			h1 {
-				color: purple;
-				font-size: 4rem;
+				color: var(--theme-text);
+				font-size: 1.8rem;
+				font-weight: normal;
+				margin-bottom: 1.5rem;
 			}
 		</style>
 	</head>
 	<body>
+		<ControlBar client:load />
 		<Header />
 		<h1>{pageTitle}</h1>
 		<slot />
 		<Footer />
 		<script>
 			import "../scripts/menu.js";
+
+			// Initialize theme from localStorage
+			function initTheme() {
+				const savedTheme = localStorage.getItem("theme");
+				if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
+					document.documentElement.className = savedTheme;
+				}
+			}
+
+			// Initialize font from localStorage
+			function initFont() {
+				const savedFont = localStorage.getItem("font");
+				if (savedFont) {
+					// Apply font class to body
+					document.body.classList.forEach((existingClass) => {
+						if (existingClass.startsWith("font-")) {
+							document.body.classList.remove(existingClass);
+						}
+					});
+
+					if (savedFont) {
+						document.body.classList.add(`font-${savedFont}`);
+					}
+
+					// Apply font variable
+					const fontMap: Record<string, string> = {
+						"": "sans-serif",
+						"jetbrains-mono": '"JetBrains Mono", monospace',
+						"fira-code": '"Fira Code", monospace',
+						"source-code-pro": '"Source Code Pro", monospace',
+						"roboto-mono": '"Roboto Mono", monospace',
+					};
+
+					document.documentElement.style.setProperty(
+						"--font-family-mono",
+						fontMap[savedFont] || "sans-serif",
+					);
+				}
+			}
+
+			// Run initializers
+			document.addEventListener("DOMContentLoaded", () => {
+				initTheme();
+				initFont();
+			});
+
+			// Also run immediately for faster loading
+			initTheme();
+			initFont();
 		</script>
 	</body>
 </html>

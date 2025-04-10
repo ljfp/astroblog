@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "About This Website";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<h2>About This Website</h2>
+	<p>This website was built with modern web technologies:</p>
+	<ul>
+		<li><strong>Astro</strong>: A modern static site builder</li>
+		<li><strong>Preact</strong>: A fast 3kB alternative to React</li>
+		<li><strong>JavaScript</strong>: For interactivity and dynamic content</li>
+		<li><strong>CSS</strong>: For styling and responsive design</li>
+	</ul>
+
+	<p>
+		The website features a "hacker terminal" aesthetic combined with modern, interactive elements. It's designed to
+		showcase my work in programming and video game development.
+	</p>
+
+	<p>
+		You can switch between dark and light modes using the theme toggle in the header. The website is also fully
+		responsive, adapting to different screen sizes for an optimal viewing experience.
+	</p>
+</BaseLayout>

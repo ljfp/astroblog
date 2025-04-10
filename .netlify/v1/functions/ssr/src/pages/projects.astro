@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Projects";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<h2>My Projects</h2>
+	<p>Here you'll find some of my programming and game development projects.</p>
+
+	<div class="projects-grid">
+		<div class="project-card">
+			<h3>Project 1</h3>
+			<p>A description of project 1. This could be a game or an open-source application.</p>
+			<div class="project-tags">
+				<span class="tag">JavaScript</span>
+				<span class="tag">WebAssembly</span>
+			</div>
+			<a href="#" class="project-link">View Project →</a>
+		</div>
+
+		<div class="project-card">
+			<h3>Project 2</h3>
+			<p>A description of project 2. This could be a game or an open-source application.</p>
+			<div class="project-tags">
+				<span class="tag">C++</span>
+				<span class="tag">Game Development</span>
+			</div>
+			<a href="#" class="project-link">View Project →</a>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.project-card {
+		border: 1px solid var(--theme-border);
+		border-radius: 0;
+		padding: 1.5rem;
+		background-color: var(--theme-background-modal);
+		transition: transform 0.2s ease;
+	}
+
+	.project-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.project-tags {
+		margin: 1rem 0;
+	}
+
+	.tag {
+		background-color: var(--theme-button-background);
+		color: var(--theme-text);
+		padding: 0.3rem 0.7rem;
+		border-radius: 0;
+		font-size: 0.8rem;
+		margin-right: 0.5rem;
+		border: 1px solid var(--theme-border);
+	}
+
+	.project-link {
+		display: inline-block;
+		margin-top: 1rem;
+		color: var(--theme-text);
+		text-decoration: none;
+		font-weight: normal;
+		padding: 0.4rem 0.6rem;
+		border: 1px solid var(--theme-text);
+	}
+
+	.project-link:hover {
+		border-color: var(--theme-focused-foreground);
+	}
+</style>

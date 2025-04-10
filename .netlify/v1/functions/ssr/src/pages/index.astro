@@ -2,10 +2,63 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 
-const pageTitle = "Home Page";
+const pageTitle = "LJFP's Personal Website";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
+	<h2>Welcome to my website</h2>
+
 	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+	<section class="about-section">
+		<h3>About Me</h3>
+		<p>
+			Hi, I'm LJFP! This is my personal website where you can learn about me and my work. Feel free to explore my
+			blog posts, projects, and more. Try switching themes and fonts using the controls in the top bar!
+		</p>
+	</section>
+
+	<section class="projects-preview">
+		<h3>Featured Projects</h3>
+		<ul>
+			<li><strong>Game Development</strong> - Creating games with modern technologies</li>
+			<li><strong>Open Source Project 1</strong> - A collaborative tool for developers</li>
+			<li><strong>Open Source Project 2</strong> - A library for efficient data processing</li>
+		</ul>
+		<a href="/projects/">View all projects →</a>
+	</section>
+
+	<style>
+		section {
+			margin: 2rem 0;
+			padding: 1rem;
+			border-radius: 8px;
+			background-color: var(--theme-background-modal);
+		}
+
+		h3 {
+			margin-top: 0;
+			border-bottom: 1px solid var(--theme-border);
+			padding-bottom: 0.5rem;
+		}
+
+		.projects-preview ul {
+			margin: 1rem 0;
+		}
+
+		.projects-preview a {
+			display: inline-block;
+			margin-top: 1rem;
+			text-decoration: none;
+			color: var(--theme-text);
+			padding: 0.4rem 0.6rem;
+			border: 1px solid var(--theme-text);
+			font-size: 0.9rem;
+			font-weight: normal;
+		}
+
+		.projects-preview a:hover {
+			border-color: var(--theme-focused-foreground);
+		}
+	</style>
 </BaseLayout>

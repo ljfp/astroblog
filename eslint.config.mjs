@@ -45,7 +45,9 @@ export default [
 		ignores: [
 			".netlify/**",
 			"dist/**",
-			"node_modules/**"
+			"node_modules/**",
+			"srcl/**",
+			"**/srcl/**"
 		]
 	},
 

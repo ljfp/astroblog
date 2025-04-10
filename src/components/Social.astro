@@ -21,38 +21,29 @@ function getUrl(platform: string, username: string): string {
 		return `https://www.${platform}.com/${username}`;
 	}
 }
+
+// Get display text for the platform
+function getDisplayText(platform: string): string {
+	return platform.charAt(0).toUpperCase() + platform.slice(1);
+}
 ---
 
-<a href={getUrl(platform, username)} class="social-link" aria-label={platform}>
-	<span class="icon" set:html={icons[platform]} />
+<a href={getUrl(platform, username)} class="social-link">
+	⊹ {getDisplayText(platform)}
 </a>
 
 <style>
 	.social-link {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0.6rem;
-		color: white;
-		background-color: #4c1d95;
+		display: inline-block;
 		text-decoration: none;
-		border-radius: 50%;
-		margin-right: 0.5rem;
-		transition: transform 0.2s ease;
+		border: 1px solid var(--theme-text);
+		padding: 0.4rem 0.6rem;
+		color: var(--theme-text);
+		font-size: 0.9rem;
+		transition: border-color 0.2s ease;
 	}
 
 	.social-link:hover {
-		transform: scale(1.1);
-	}
-
-	.icon {
-		display: flex;
-		width: 24px;
-		height: 24px;
-	}
-
-	html.dark .social-link {
-		color: white;
-		background-color: #8a63d2;
+		border-color: var(--theme-focused-foreground);
 	}
 </style>
