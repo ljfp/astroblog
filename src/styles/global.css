@@ -48,6 +48,15 @@ h1 {
 	--color-white: rgba(255, 255, 255, 1);
 	--color-daybreak-10: rgba(239, 99, 0, 1);
 	--color-daybreak-10-5: rgba(239, 99, 0, 0.5);
+	--color-blue-10: rgba(221, 238, 255, 1);
+	--color-blue-20: rgba(186, 220, 255, 1);
+	--color-blue-20-5: rgba(186, 220, 255, 0.5);
+	--color-blue-50: rgba(82, 146, 212, 1);
+	--color-blue-60: rgba(52, 109, 167, 1);
+	--color-blue-60-2: rgba(52, 109, 167, 0.2);
+	--color-blue-70: rgba(33, 85, 138, 1);
+	--color-blue-80: rgba(19, 62, 106, 1);
+	--color-blue-90: rgba(10, 43, 76, 1);
 
 	/* Font Configuration */
 	--font-family-mono: monospace, monospace;
@@ -90,6 +99,26 @@ html.dark {
 	--theme-button-background: var(--color-gray-80, #393939);
 	--theme-focused-foreground: var(--color-daybreak-10, #ef6300);
 	--theme-focused-foreground-subdued: var(--color-daybreak-10-5, rgba(239, 99, 0, 0.5));
+	background-color: var(--theme-background);
+	color: var(--theme-text);
+}
+
+/* Blue Theme - Operation Safe Blue */
+html.blue {
+	--theme-overlay: var(--color-blue-20-5, rgba(186, 220, 255, 0.5));
+	--theme-background: var(--color-blue-80, #133e6a);
+	--theme-background-modal: var(--color-blue-70, #21558a);
+	--theme-background-modal-footer: var(--color-blue-90, #0a2b4c);
+	--theme-background-input: var(--color-blue-60, #346da7);
+	--theme-border: var(--color-blue-70, #21558a);
+	--theme-border-subdued: var(--color-blue-60-2, rgba(52, 109, 167, 0.2));
+	--theme-text: var(--color-blue-10, #ddeeff);
+	--theme-button: var(--color-blue-10, #ddeeff);
+	--theme-button-text: var(--color-blue-80, #133e6a);
+	--theme-button-foreground: var(--color-blue-60, #346da7);
+	--theme-button-background: var(--color-blue-70, #21558a);
+	--theme-focused-foreground: var(--color-blue-50, #5292d4);
+	--theme-focused-foreground-subdued: var(--color-blue-20-5, rgba(186, 220, 255, 0.5));
 	background-color: var(--theme-background);
 	color: var(--theme-text);
 }

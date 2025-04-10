@@ -45,33 +45,68 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <div class="nav-left" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Hamburger", $$Hamburger, { "data-astro-cid-3ef6ksr2": true })} </div> ${renderComponent($$result, "Navigation", $$Navigation, { "data-astro-cid-3ef6ksr2": true })} </nav> </header> `;
 }, "/home/ljfp/Repositories/astroblog/src/components/Header.astro", void 0);
 
+const THEMES = [{
+  name: "Refined White",
+  value: "light",
+  icon: "☀"
+}, {
+  name: "Black Midnight Vapor",
+  value: "dark",
+  icon: "☾"
+}, {
+  name: "Operation Safe Blue",
+  value: "blue",
+  icon: "⊹"
+}];
 function ThemeControls() {
-  const [isDark, setIsDark] = useState(() => {
+  const [theme, setTheme] = useState(() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") === "dark";
+      return localStorage.getItem("theme");
     }
-    return false;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
   });
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
-    const theme = isDark ? "dark" : "light";
-    document.documentElement.className = theme;
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem("theme", theme);
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.remove("light", "dark", "blue");
+      document.documentElement.classList.add(theme);
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem("theme", theme);
+      }
     }
-  }, [isDark]);
-  const toggleTheme = () => {
-    setIsDark(!isDark);
+  }, [theme]);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
+  const changeTheme = (newTheme) => {
+    setTheme(newTheme);
+    setIsOpen(false);
+  };
+  THEMES.find((t) => t.value === theme) || THEMES[0];
   return jsxs("div", {
-    class: "theme-toggle-wrapper",
+    class: "theme-controls",
     children: [jsx("button", {
       class: "theme-toggle",
-      onClick: toggleTheme,
-      "aria-label": isDark ? "Switch to light theme" : "Switch to dark theme",
+      onClick: toggleDropdown,
+      "aria-label": "Toggle Theme Selection",
       children: "⌃+T Theme"
+    }), isOpen && jsx("div", {
+      class: "theme-dropdown",
+      children: THEMES.map((themeOption) => jsxs("div", {
+        class: `theme-option ${theme === themeOption.value ? "selected" : ""}`,
+        onClick: () => changeTheme(themeOption.value),
+        children: [jsx("span", {
+          class: "theme-icon",
+          children: themeOption.icon
+        }), " ", themeOption.name]
+      }, themeOption.value))
     }), jsx("style", {
       children: `
-        .theme-toggle-wrapper {
+        .theme-controls {
+          position: relative;
           display: inline-block;
         }
         
@@ -87,6 +122,33 @@ function ThemeControls() {
         
         .theme-toggle:hover {
           border-color: var(--theme-focused-foreground, #eee);
+        }
+        
+        .theme-dropdown {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 0.5rem;
+          background: var(--theme-background-modal, white);
+          border: 1px solid var(--theme-border, #ccc);
+          padding: 0.5rem 0;
+          min-width: 200px;
+          z-index: 10;
+        }
+        
+        .theme-option {
+          padding: 0.4rem 1rem;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+        
+        .theme-option:hover, .theme-option.selected {
+          background: var(--theme-focused-foreground, #eee);
+        }
+        
+        .theme-icon {
+          display: inline-block;
+          margin-right: 0.5rem;
         }
       `
     })]

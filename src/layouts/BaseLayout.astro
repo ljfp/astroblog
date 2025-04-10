@@ -44,7 +44,7 @@ const { pageTitle } = Astro.props;
 			// Initialize theme from localStorage
 			function initTheme() {
 				const savedTheme = localStorage.getItem("theme");
-				if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
+				if (savedTheme && (savedTheme === "light" || savedTheme === "dark" || savedTheme === "blue")) {
 					document.documentElement.className = savedTheme;
 				}
 			}
